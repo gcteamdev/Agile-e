@@ -33,10 +33,9 @@ app.set('view engine', 'ejs')
 
 //get route for index.ejs
 
-app.get('/',(req,res) =>{
-    res.render('index.ejs',{user:'Welcome to dashbord!', password:'',email:''})
-})
 
+
+/* below code was moved to homerouter.js
 
 //get route for login.ejs and register.ejs
 app.get('/login',(req,res) =>{
@@ -45,7 +44,7 @@ app.get('/login',(req,res) =>{
 app.get('/register',(req,res) =>{
     res.render('register.ejs',{user:'Sign up to explore!', password:'',email:''})
 })
-
+*/
 
 
 
@@ -66,7 +65,7 @@ app.use(bodyParser.json())
 
 
 
-
+//router running on index
 app.use('/',homeRouter)
 
 app.listen(8080)

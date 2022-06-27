@@ -5,8 +5,15 @@ const Router = express.Router();
 const homeSchema = require('../models/homeSchema')
 Router.use(express.urlencoded({ extended: false}))
 
-Router.get('/',(err,res) =>{
-    res.render('register.ejs',{user:'Sign up to explore!', password:'',email:''})
+
+Router.get('/',(req,res) =>{
+    res.render('index.ejs')
+})
+
+
+//you are defining titile and email and password messages here
+Router.get('/register',(err,res) =>{
+    res.render('register.ejs',{title:'Sign up to explore!', password:'',email:''})
 })
 
 
@@ -29,39 +36,71 @@ Router.post('/register',async(req,res) =>{
         userData.save(err =>{
             if(err){
                 console.log('Error!')
+              //  res.render('register',{title:'Error!', password:'',email:''})
             }else{
-                res.render('register',{user:'Sign up successfull!', password:'',email:''})
+                res.render('register',{title:'Sign up was successfull, Please Log In!', password:'',email:''})
             }
             
         })
 
+        //this code below above else is to prevent email from multi uses, if to be submit email = exited email => show error
+        const useremail = await homeSchema.findOne({ email:email});
+          if (email === useremail.email) {
+            res.render('register',{title:'', password:'',email:'This e-mail is already taken!'})
+          
+          }
+
     } else{
-        res.render('register',{user:'Passwords does not match!', password:'',email:''})
+        res.render('register',{title:'Passwords does not match!', password:'',email:''})
 
     }
     
   } catch(error){
 
-    res.render('register',{user:'Error!', password:'',email:''})
+    res.render('register',{title:'Error!', password:'',email:''})
   }
 })
 
 
 
+
+
+
+
+
+
+
+
+
+
 //same above get and post route for login.ejs
-Router.get('/',(err,res) =>{
-    res.render('login.ejs',{user:'Sign in to explore power!', password:'',email:''})
+Router.get('/login',(err,res) =>{
+    res.render('login.ejs',{title:'Get In to explore the power!', password:'',email:''})
 })
 
 Router.post('/login',async(req,res) =>{
-  try{
+  //try{
     const {
         email,
-        password,
-        cpassword
+        password
     } = req.body;
+
+    homeSchema.findOne({ email:email}, (err,result) =>{ 
+      
+        if (email === result.email) {
+        res.render ('dashbord', {name: result.name})
+
+      } else{
+        console.log(err)
+        
+        res.render('login.ejs',{title:'Sign In error!', password:'',email:''})
+
+      }
+    })
+
+
     
-    if(password === cpassword){
+  /*  if(password === cpassword){
         const userData = new homeSchema ({
             email,
             password
@@ -70,20 +109,21 @@ Router.post('/login',async(req,res) =>{
             if(err){
                 console.log('Error!')
             }else{
-                res.render('login',{user:'Sign up successfull!', password:'',email:''})
+                res.render('login',{title:'Sign up successfull!', password:'',email:''})
             }
             
         })
-
+ 
     } else{
-        res.render('login',{user:'Passwords does not match!', password:'',email:''})
+        res.render('login',{title:'Passwords does not match!', password:'',email:''})
 
     }
     
   } catch(error){
 
-    res.render('login',{user:'Error!', password:'',email:''})
+    res.render('login',{title:'Error!', password:'',email:''})
   }
+  */
 })
 
 
