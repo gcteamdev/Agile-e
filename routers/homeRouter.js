@@ -79,7 +79,7 @@ Router.get('/login',(err,res) =>{
 })
 
 Router.post('/login',async(req,res) =>{
-  //try{
+  
     const {
         email,
         password
@@ -87,8 +87,8 @@ Router.post('/login',async(req,res) =>{
 
     homeSchema.findOne({ email:email}, (err,result) =>{ 
       
-        if (email === result.email) {
-        res.render ('dashbord', {name: result.name})
+        if (email === result.email && password === result.password) {
+        res.render('dashbord', {name: result.name})
 
       } else{
         console.log(err)
@@ -96,35 +96,24 @@ Router.post('/login',async(req,res) =>{
         res.render('login.ejs',{title:'Sign In error!', password:'',email:''})
 
       }
-    })
+    })   
 
-
-    
-  /*  if(password === cpassword){
-        const userData = new homeSchema ({
-            email,
-            password
-        })
-        userData.save(err =>{
-            if(err){
-                console.log('Error!')
-            }else{
-                res.render('login',{title:'Sign up successfull!', password:'',email:''})
-            }
-            
-        })
- 
-    } else{
-        res.render('login',{title:'Passwords does not match!', password:'',email:''})
-
-    }
-    
-  } catch(error){
-
-    res.render('login',{title:'Error!', password:'',email:''})
-  }
-  */
 })
+
+
+
+Router.get('/login',  function (req, res, next)  {
+    if (req.session) {
+      // delete session object
+      req.session.destroy(function (err) {
+        if (err) {
+          return next(err);
+        } else {
+          return res.redirect('/');
+        }
+      });
+    }
+  });
 
 
 
