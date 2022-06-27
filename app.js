@@ -21,7 +21,34 @@ db.once('open',() =>{
     })
 
 
+
+
+
+
+
+//we are telling server that we are using ejs
 app.set('view engine', 'ejs')
+
+
+
+//get route for index.ejs
+app.get('/',(req,res) =>{
+    res.render('index.ejs',{name:"Hamza"})
+})
+//get route for login.ejs and register.ejs
+app.get('/login',(req,res) =>{
+    res.render('login.ejs')
+})
+
+app.get('/register',(req,res) =>{
+    res.render('register.ejs')
+})
+
+
+
+
+
+
 
 
 //linking css files 
