@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose =require('mongoose');
 const bodyParser = require('body-parser');
-const homeRouter = require('./routers/homeRouter')
+//const homeRouter = require('./routers/homeRouter')
 
 
 const port = process.env.port || 8080;
@@ -32,16 +32,18 @@ app.set('view engine', 'ejs')
 
 
 //get route for index.ejs
+
 app.get('/',(req,res) =>{
-    res.render('index.ejs',{name:"Hamza"})
-})
-//get route for login.ejs and register.ejs
-app.get('/login',(req,res) =>{
-    res.render('login.ejs')
+    res.render('index.ejs',{user:'Welcome to dashbord!', password:'',email:''})
 })
 
+
+//get route for login.ejs and register.ejs
+app.get('/login',(req,res) =>{
+    res.render('login.ejs',{user:'Sign in to explore!', password:'',email:''})
+})
 app.get('/register',(req,res) =>{
-    res.render('register.ejs')
+    res.render('register.ejs',{user:'Sign up to explore!', password:'',email:''})
 })
 
 
@@ -65,6 +67,6 @@ app.use(bodyParser.json())
 
 
 
-app.use('/',homeRouter)
+//app.use('/',homeRouter)
 
 app.listen(8080)

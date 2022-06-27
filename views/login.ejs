@@ -8,32 +8,59 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Agylee</title>
   </head>
   <body>
-    <h3 class="text-center text-muted"> <%= title%> </h3>
+     
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Agylee</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register"> Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/gcteamdev">Github</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/devhamza/">linkedin</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
 
 
     <form class="container col-md-6 mt-5 bg-info rounded" action="/login" method="post">
-        <div class="mt-5 text-center text-bold text-white"> Sign In  </div>
-       
+        <div class="mt-5 text-center text-bold text-white"> Login  </div>
         <div class="form-group text-white mt-5">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input  name ="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group text-white">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input name= "password" type="password" class="form-control" id="exampleInputPassword1">
         </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label text-muted" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary mb-5">Log In</button>
+       
+        <button type="submit" class="btn btn-primary mb-5 text-center">Sign In</button>
       </form>
 
-      <a href="/register"> Register</a>
+     <div class=" col=md-6 text-center">
+      <a class="btn text-white bg-info col-md-6 rounded mt-5 text text-center p-3" href="register"> Register</a>
+
+     </div>
+
+
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
