@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <title>Agylee</title>
+    <title>Agile-ḝ!</title>
   </head>
   <body>
      
@@ -22,7 +22,7 @@
        <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav">
            <li class="nav-item active">
-             <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
+             <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
            </li>
            <li class="nav-item">
              <a class="nav-link text-white border-white" href="login"> Log Out</a>
@@ -38,11 +38,13 @@
 
     </nav>
 
-      <div class=" jumbotron jumbotron-fluid banner d-flex border border-light rounded ml-2 mr-2 mt-5 mb-5">
+      <div class=" jumbotron jumbotron-fluid banner d-flex border border-light rounded ml-2 mr-2 mb-5">
          <div class="container">
-          <h3 class="text-white"> Welcome <%= name %> to</h3>
-          <h1 class="display-4 text-bold text-muted headline">Agyleḝ!</h1>
+          <h3 class="text-white"> Welcome <%= name %>! to</h3>
+          <h1 class="display-4 text-bold text-muted headline">Agile-ḝ!</h1>
           <p class="lead text-white">Created to simplify projects and mark the success ahead! </p>
+          <button class="btn bg-primary text-white text-bold border-white mt-5 mr-3 p-2 project-btn">Create New Project</button>
+          <button class="btn bg-info text-white text-bold border-white mt-5 p-2 project-btn"> View Projects</button>
    </div>
 
       </div>
@@ -50,26 +52,72 @@
 
       
       <style>
-       .banner{
-        height:50vh;
-       }
-       .jumbotron{
-        box-shadow: rgb(38, 57, 77) 0px 20px 30px 5px;
-        height:100vh;
-       }
        .headline{
         font-size: 100px;
        }
+
        .jumbotron{
         background-image: linear-gradient(to right, rgba(27, 195, 228, 0.7), rgba(255, 252, 179, 0.7)), url("https://images.unsplash.com/photo-1603201667230-bd139210db18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1188&q=80");
         background-repeat: no-repeat;
         background-size:100%;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px 5px;
+        height:100vh;
+       }
+       body{
+        background-color: rgb(163, 222, 202);
+       }
+       .project-btn{
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px 5px;
+       }
+       .scrum-card{
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px 5px;
+        margin-top:200px;
+
        }
       </style>
 
 
 
+<form class="container bg-light col-8 text-info mb-5 rounded scrum-card">
+    <div>
+        <h3 class="bg-white text-center text-info text-bold mt-5 mb-2 p-2" href="#"> Scrum card</h3>
+    </div>
 
+    <div class="form-group">
+      <lebel for="task">Project Name:</lebel>
+      <input type="text" class="form-control" id="task" placeholder="build a virtual website"> 
+      <lebel for="task">Sprint num:</lebel>
+      <input type="number" class="form-control" id="task" placeholder="Sprint-1"> 
+      <label for="exampleFormControlInput1">Github repo:</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="https://github.com/example.git">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Status:</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>To-do/new</option>
+        <option>In progress</option>
+        <option>Done!</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Select Sprint members:</label><br>
+      <input type="checkbox" name="dev1" value="Developer 1">
+	  <label>Developer 1</label><br>
+	  <input type="checkbox" name="dev2" value="Developer 2">
+	  <label>Developer 2</label><br>
+      <input type="checkbox" name="dev3" value="Developer 3">
+	  <label>Developer 3</label><br>
+      <input type="checkbox" name="dev4" value="Developer 4">
+	  <label>Developer 4</label><br>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Project Description:</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div>
+        <button class="btn bg-info text-white text-bold border-white mt-2 mb-5 p-2 project-btn"> Add Project</button>
+    </div>
+  </form>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -86,7 +134,7 @@
     <div class="footer bg-dark ">
         <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active mt-5 text-info" href="/">Home</a>
+              <a class="nav-link active mt-5 text-info" href="#">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active text-info" href="/">About</a>
