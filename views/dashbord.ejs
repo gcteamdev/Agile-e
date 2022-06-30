@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
     <title>Agile-ḝ!</title>
+    
   </head>
   <body>
      
 
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
        
-       <a class="navbar-brand text-info" href="/">Agylee</a>
+       <a class="navbar-brand text-info" href="/">Agile-ḝ</a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
@@ -39,13 +40,14 @@
     </nav>
 
       <div class=" jumbotron jumbotron-fluid banner d-flex border border-light rounded ml-2 mr-2 mb-5">
-         <div class="container">
+         
+          <div class="container">
           <h3 class="text-white"> Welcome <%= name %>! to</h3>
           <h1 class="display-4 text-bold text-muted headline">Agile-ḝ!</h1>
           <p class="lead text-white">Created to simplify projects and mark the success ahead! </p>
           <button class="btn bg-primary text-white text-bold border-white mt-5 mr-3 p-2 project-btn">Create New Project</button>
           <button class="btn bg-info text-white text-bold border-white mt-5 p-2 project-btn"> View Projects</button>
-   </div>
+          </div>
 
       </div>
     
@@ -76,48 +78,162 @@
        }
       </style>
 
+<header class="container">
+  <h1>Add project</h1>
+  <form id="new-task-form">
+      <input type="text" id="new-task-input" placeholder="Enter project name"/><br>
+      <textarea type="text" id="new-task-textarea" placeholder="Enter description"></textarea><br>
 
 
-<form class="container bg-light col-8 text-info mb-5 rounded scrum-card">
-    <div>
-        <h3 class="bg-white text-center text-info text-bold mt-5 mb-2 p-2" href="#"> Scrum card</h3>
-    </div>
 
-    <div class="form-group">
-      <lebel for="task">Project Name:</lebel>
-      <input type="text" class="form-control" id="task" placeholder="build a virtual website"> 
-      <lebel for="task">Sprint num:</lebel>
-      <input type="number" class="form-control" id="task" placeholder="Sprint-1"> 
-      <label for="exampleFormControlInput1">Github repo:</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="https://github.com/example.git">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Status:</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>To-do/new</option>
-        <option>In progress</option>
-        <option>Done!</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect2">Select Sprint members:</label><br>
-      <input type="checkbox" name="dev1" value="Developer 1">
-	  <label>Developer 1</label><br>
-	  <input type="checkbox" name="dev2" value="Developer 2">
-	  <label>Developer 2</label><br>
-      <input type="checkbox" name="dev3" value="Developer 3">
-	  <label>Developer 3</label><br>
-      <input type="checkbox" name="dev4" value="Developer 4">
-	  <label>Developer 4</label><br>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Project Description:</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <div>
-        <button class="btn bg-info text-white text-bold border-white mt-2 mb-5 p-2 project-btn"> Add Project</button>
-    </div>
+      <select class="form-control" id="status">
+          <option id="new-option" value="in-progress">In progress</option>
+          <option id="new-option" value="done">Done</option>
+      </select> <br>
+
+
+
+
+
+
+      <input type="submit" id="new-task-submit" value="Add task" />
+     
+
   </form>
+ </header>
+ 
+ <main>
+     
+     <section class="task-list container">
+        <h2>Tasks</h2>
+        <div id="tasks">
+             
+      <!-- <div class="task">
+              <div class="content">
+
+                  <input type="text" class="text" value="my shiny task" readonly />
+
+              </div>
+              <div class="actions">
+                  <button class="edit">Edit</button>
+                  <button class="delete">Delete</button>
+              </div>
+           </div>
+           -->
+           
+
+        </div>
+     </section>
+    
+
+
+ </main>
+
+
+
+
+
+
+ <style>
+  #tasks{
+    height:100%!important; 
+    background-color: brown; 
+  }
+  .content{
+      height:500px!important;
+      display:flex;
+      justify-content: flex-start;
+      flex-direction:column;
+  }
+  .actions{
+      background-color: blueviolet!important;
+      display: flex;
+      justify-content: space-around;
+  }
+  .delete{
+      color:crimson!important;
+  }
+ </style>
+
+
+
+
+
+
+
+<!--
+  <form class=" checbox container bg-light col-8 text-info mb-5 rounded scrum-card" id="todo-input">
+            <div>
+                <h3 class="bg-white text-center text-info text-bold mt-5 mb-2 p-2" href="#"> Scrum card</h3>
+            </div>
+        
+            <div class="form-group">
+              <lebel for="task">Project Name:</lebel>
+              <input type="text" class="form-control" id="task" placeholder="build a virtual website"> 
+              <lebel for="task">Sprint num:</lebel>
+              <input type="number" class="form-control" id="task" placeholder="Sprint-1"> 
+              <label for="exampleFormControlInput1">Github repo:</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="https://github.com/example.git">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Status:</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>To-do/new</option>
+                <option>In progress</option>
+                <option>Done!</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect2">Select Sprint members:</label><br>
+              <input type="checkbox" name="dev1" value="Developer 1">
+            <label>Developer 1</label><br>
+            <input type="checkbox" name="dev2" value="Developer 2">
+            <label>Developer 2</label><br>
+              <input type="checkbox" name="dev3" value="Developer 3">
+            <label>Developer 3</label><br>
+              <input type="checkbox" name="dev4" value="Developer 4">
+            <label>Developer 4</label><br>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Project Description:</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            
+          </form>
+-->
+
+
+
+
+
+
+
+<div class="listed task">
+  <ul class="bg-info" id="todos-list">
+     <!-- <li>
+          <input class="checkbox" type="checkbox">
+          <p class="paragraph"> Test</p>
+          <span class="remove">&cross;</span>
+      </li>
+      -->
+      
+
+      
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -154,5 +270,8 @@
           </div>
     </div>
     
+
+
+  <script src="jsfile.js"></script>
   </body>
 </html>
