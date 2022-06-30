@@ -55,7 +55,7 @@
       
       <style>
        .headline{
-        font-size: 100px;
+        font-size: 50px;
        }
 
        .jumbotron{
@@ -66,7 +66,8 @@
         height:100vh;
        }
        body{
-        background-color: rgb(163, 222, 202);
+        background: rgb(5,59,67);
+        background: linear-gradient(90deg, rgba(5,59,67,1) 5%, rgba(9,121,99,1) 26%, rgba(5,164,173,1) 66%, rgba(0,212,255,1) 100%);
        }
        .project-btn{
         box-shadow: rgb(38, 57, 77) 0px 20px 30px 5px;
@@ -76,17 +77,19 @@
         margin-top:200px;
 
        }
+      
+
       </style>
 
-<header class="container">
-  <h1>Add project</h1>
+<header class="container bg-light">
+  <h1 class="col text-center text-bold text-info rounded">Add project</h1>
   <form id="new-task-form">
-      <input type="text" id="new-task-input" placeholder="Enter project name"/><br>
-      <textarea type="text" id="new-task-textarea" placeholder="Enter description"></textarea><br>
+      <input type="text" class="col rounded mb-3 text-info border-info" id="new-task-input" placeholder="Enter project name"/><br>
+      <textarea type="text" class="col rounded mb-3 input-textarea textwhite bg-light border-info" id="new-task-textarea" placeholder="Enter description"></textarea><br>
 
 
 
-      <select class="form-control" id="status">
+      <select class="form-control  text-info border-info" id="status">
           <option id="new-option" value="in-progress">In progress</option>
           <option id="new-option" value="done">Done</option>
       </select> <br>
@@ -96,7 +99,7 @@
 
 
 
-      <input type="submit" id="new-task-submit" value="Add task" />
+      <input type="submit"  class="btn text-white text-bold bg-primary mb-3 mt-5" id="new-task-submit" value="Add task" />
      
 
   </form>
@@ -104,9 +107,9 @@
  
  <main>
      
-     <section class="task-list container">
-        <h2>Tasks</h2>
-        <div id="tasks">
+     <section class="task-list">
+       <h2 class="col text-center text-bold text-white ">Current Projects:</h2>
+        <div id="tasks" class="text-info bg-muted container rounded">
              
       <!-- <div class="task">
               <div class="content">
@@ -135,24 +138,90 @@
 
 
  <style>
-  #tasks{
-    height:100%!important; 
-    background-color: brown; 
+
+  header{
+  margin-top: 300px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px 5px;
+  height:100%;
+  border-radius: 5px 25px 45px;
+  }
+  h2{
+   margin-top:250px;
+   color:#e0dfdc;
+   margin-bottom:150px;
+  }
+  .input-textarea{
+   height:150px;
+  }
+  .text{
+    padding:5px;
+    margin-bottom:5px;
+    margin-left:2px;
+    margin-right:2px;
+    margin-top:10px;
+    border-radius: 5px;
+    height:150px;
+    font-size: 40px;
+    color:white;
+    background: rgb(73,115,205);
+    background: radial-gradient(circle, rgba(73,115,205,1) 63%, rgba(103,142,210,1) 85%);
+   }
+    .textarea{
+    height:250px;
+    margin-bottom:10px;
+    border-radius: 5px;
+    margin-left:2px;
+    margin-right:2px;
+    color:#008B8B;
+    font-size:large;
+
+  }
+  .status{
+    border-radius: 5px;
+    padding:3px;
+    margin-bottom:10px;
+    margin-left:2px;
+    margin-right:2px;
+    color:#008B8B;
   }
   .content{
-      height:500px!important;
-      display:flex;
-      justify-content: flex-start;
-      flex-direction:column;
+  height:110%!important;
+  border-radius: 10px;
+  display:flex;
+  justify-content: flex-start;
+  flex-direction:column;
+  background-color: rgba(247, 230, 230, 0.588);
+  
+
   }
   .actions{
-      background-color: blueviolet!important;
-      display: flex;
-      justify-content: space-around;
+
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom:200px;
+  margin-top:15px;
+  height:55px;
+  box-shadow:rgb(38, 57, 77) 0px 20px 30px 5px;
   }
   .delete{
-      color:crimson!important;
+  color:crimson!important;
+  border-radius: 5px;
+  border:1px solid whitesmoke;
+  padding: 10px;
+
   }
+  .edit{
+  border-radius: 5px;
+  background-color:rgb(79, 6, 162);
+  color:whitesmoke;
+  border:1px solid whitesmoke;
+  padding: 10px;
+  width:85px;
+  }
+  .edit:hover {
+  background-color:seagreen;
+}
  </style>
 
 
@@ -265,7 +334,7 @@
               <a class="nav-link mb-5 text-info" href="/">Contact us</a>
             </li>
         </ul>
-        <div class="footer-copyright text-center py-3 text-white">© 2022 Copyright- GCTeam
+        <div class="footer-copyright text-center py-3 text-white">© 2022 Copyright
             <a href="#"> </a>
           </div>
     </div>

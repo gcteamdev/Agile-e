@@ -59,7 +59,7 @@ window.addEventListener('load', ()=>{
 
       //now we have an <input element with class, type, value and attribute who will be a child of content container;
       const task_input_el = document.createElement("input");
-      task_input_el.classList.add('task');
+      task_input_el.classList.add('text');
       task_input_el.type = "text";
       task_input_el.value = task;
       //meaning value will be whatever user entered as input see 'task' defined in line 24
@@ -87,7 +87,7 @@ window.addEventListener('load', ()=>{
 
       const statusOption = document.createElement("option");
       //statusOption.value = enteredStatus.value.toLocaleLowerCase();
-      statusOption.value = submittedOption;
+      statusOption.value = "text";
       statusOption.text = submittedOption;
       statusOption.setAttribute("readonly","readonly");
     

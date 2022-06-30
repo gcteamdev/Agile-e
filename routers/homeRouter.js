@@ -75,7 +75,7 @@ Router.post('/register',async(req,res) =>{
 
 //same above get and post route for login.ejs
 Router.get('/login',(err,res) =>{
-    res.render('login.ejs',{title:'Get In to explore the power!', password:'',email:''})
+    res.render('login.ejs',{title:'Sign In to explore the power!', password:'',email:''})
 })
 
 Router.post('/login',async(req,res) =>{
