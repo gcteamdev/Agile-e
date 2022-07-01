@@ -12,6 +12,7 @@ const homeRouter = require('./routers/homeRouter')
 const PORT = process.env.PORT || 8080;
 
 
+
 const app = express();
 
 //db connection
@@ -77,7 +78,7 @@ app.use(bodyParser.json())
 //router running on index
 app.use('/', homeRouter)
 
-app.listen(process.env.PORT || 8080)
+app.listen(PORT || 8080)
 
 //app.listen(PORT, () =>
 //console.log("listening on http://localhost:8080 ...") + PORT);
