@@ -10,7 +10,7 @@ const PORT = process.env.port || 8080;
 const app = express();
 
 //db connection
-mongoose.connect('mongodb+srv://Hamza:Test123!@cluster0.eabv6fz.mongodb.net/test',{useNewUrlParser:true})
+mongoose.connect('mongodb+srv://Hamza:Test123!@cluster0.eabv6fz.mongodb.net/test',{useNewUrlParser:true},{useUnifiedTopology:true})
 const db = mongoose.connection;
 
 db.on('error',() =>{
