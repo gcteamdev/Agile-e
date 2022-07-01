@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
+
+
 const express = require('express');
 const mongoose =require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,7 +15,10 @@ const PORT = process.env.port || 8080;
 const app = express();
 
 //db connection
-mongoose.connect('mongodb+srv://Hamza:Test123!@cluster0.eabv6fz.mongodb.net/test',{useNewUrlParser:true},{useUnifiedTopology:true})
+//mongoose.connect('mongodb+srv://Hamza:Sisijoy123@cluster0.eabv6fz.mongodb.net/test',{useNewUrlParser:true},{useUnifiedTopology:true})
+
+mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true},{useUnifiedTopology:true})
+
 const db = mongoose.connection;
 
 db.on('error',() =>{
@@ -28,6 +36,7 @@ db.once('open',() =>{
 
 //we are telling server that we are using ejs
 app.set('view engine', 'ejs')
+app.set('views', __dirname + '/views')
 
 
 
