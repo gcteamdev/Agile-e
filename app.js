@@ -70,4 +70,4 @@ app.use('/',homeRouter)
 
 //app.listen(8080)
 app.listen(PORT, () =>
-console.log("on http://localhost:") + PORT);
+console.log("listening on http://localhost:8080 ...") + PORT);
