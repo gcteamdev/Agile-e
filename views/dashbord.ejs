@@ -45,7 +45,8 @@
           <h3 class="text-white"> Welcome <%= name %>! to</h3>
           <h1 class="display-4 text-bold text-muted headline">Agile-ḝ!</h1>
           <p class="lead text-white">Created to simplify projects and mark the success ahead! </p>
-          <button class="btn bg-primary text-white text-bold border-white mt-5 mr-3 p-2 project-btn">Create New Project</button>
+
+          <button onclick="window.location.href='#project-one'" class="btn bg-primary text-white text-bold border-white mt-5 mr-3 p-2 project-btn">Create New Project</button>
           <button class="btn bg-info text-white text-bold border-white mt-5 p-2 project-btn"> View Projects</button>
           </div>
 
@@ -81,21 +82,30 @@
 
       </style>
 
-<header class="container bg-light">
+
+
+
+
+<header class="container bg-light col-md-6" id="#project-one">
   <h1 class="col text-center text-bold text-info rounded">Add project</h1>
   <form id="new-task-form">
       <input type="text" class="col rounded mb-3 text-info border-info" id="new-task-input" placeholder="Enter project name"/><br>
-      <textarea type="text" class="col rounded mb-3 input-textarea textwhite bg-light border-info" id="new-task-textarea" placeholder="Enter description"></textarea><br>
+      <textarea type="text" class="col rounded mb-3 input-textarea textwhite bg-light border-info" id="new-task-textarea" placeholder="Enter description....Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea><br>
 
 
 
       <select class="form-control  text-info border-info" id="status">
-          <option id="new-option" value="in-progress">In progress</option>
-          <option id="new-option" value="done">Done</option>
+          <option id="new-option" value="In-progress">In progress</option>
+          <option id="new-option" value="Done">Done</option>
       </select> <br>
+      
+      <label for="start">Due date:</label>
+
+      <input type="date" id="task-due" name="trip-start" class="mb-2"><br>
 
 
-
+      <lebel for="file">Mockup / file attachement:</lebel><br>
+      <input type="file" id="file" name="file"/><br>
 
 
 
@@ -183,6 +193,7 @@
     margin-left:2px;
     margin-right:2px;
     color:#008B8B;
+    height:30px;
   }
   .content{
   height:110%!important;
@@ -195,7 +206,6 @@
 
   }
   .actions{
-
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
@@ -221,6 +231,10 @@
   }
   .edit:hover {
   background-color:seagreen;
+}
+ .due-by{
+  width:40%;
+  border-radius: 5px;
 }
  </style>
 

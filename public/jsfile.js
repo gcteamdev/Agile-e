@@ -4,6 +4,8 @@ window.addEventListener('load', ()=>{
     const enteredTextarea = document.querySelector("#new-task-textarea");
     const enteredStatus = document.querySelector("#status");
     const optionSelected = document.querySelector("#new-option");
+    const dateInput = document.querySelector("#task-due");
+    const fileInput = document.querySelector("#file");
     const list_el = document.querySelector("#tasks");
 
 
@@ -16,6 +18,8 @@ window.addEventListener('load', ()=>{
         const submittedTextArea = enteredTextarea.value;
         const submittedStatus = enteredStatus.value;
         const submittedOption = optionSelected.value;
+        const submittedDate = dateInput.value;
+        const submittedFile = fileInput.value;
        
      
      
@@ -65,7 +69,8 @@ window.addEventListener('load', ()=>{
       //meaning value will be whatever user entered as input see 'task' defined in line 24
       task_input_el.setAttribute("readonly","readonly");
 
-
+      
+      //textarea
       const task_textarea_el = document.createElement("textarea");
       task_textarea_el.classList.add('textarea');
       task_textarea_el.type = "text";
@@ -75,11 +80,11 @@ window.addEventListener('load', ()=>{
 
 
 
-      
+      //status of project
 
       const task_status_el = document.createElement("select");
       task_status_el.classList.add('status');
-     // task_status_el.type = "text";
+      task_status_el.type = "text";
       task_status_el.value = submittedStatus;
       //meaning value will be whatever user entered as input see 'select status' 
       task_status_el.setAttribute("readonly","readonly");
@@ -87,21 +92,39 @@ window.addEventListener('load', ()=>{
 
       const statusOption = document.createElement("option");
       //statusOption.value = enteredStatus.value.toLocaleLowerCase();
-      statusOption.value = "text";
-      statusOption.text = submittedOption;
+      statusOption.type = "text";
+      statusOption.value = submittedOption;
       statusOption.setAttribute("readonly","readonly");
     
-
       task_status_el.appendChild(statusOption);
+
+
+
+      // due date
+      const task_dueDate_el = document.createElement("input");
+      task_dueDate_el.classList.add('due-by');
+      task_dueDate_el.type = "date";
+      task_dueDate_el.value = submittedDate;
+      task_dueDate_el.setAttribute("readonly","readonly");
     
+    
+      //attach file
 
-
+      const task_attachment_el = document.createElement("input");
+      task_attachment_el.classList.add("fileEntered");
+      task_attachment_el.type = "file";
+      task_attachment_el.innercontent = submittedFile;
+      task_attachment_el.setAttribute("readonly","readonly");
+     
+      
       
 
       
       task_content_el.appendChild(task_input_el);
       task_content_el.appendChild(task_textarea_el);
       task_content_el.appendChild(task_status_el);
+      task_content_el.appendChild(task_dueDate_el);
+      task_content_el.appendChild(task_attachment_el);
 
       
 
@@ -131,15 +154,23 @@ window.addEventListener('load', ()=>{
     
     
     
-      // now lets put the outer dive inside the div of Headline 'TASK' in html
+      // #FINALLY, now lets put the outer dive inside the div of Headline 'TASK' in html
      
       list_el.appendChild(task_el)
 
 
+
+
+
+
+      //if you keep the value to empty string once you add one task, the main task card defult to clean.
       input.value = "";
       enteredTextarea.value = "";
       enteredStatus.value = "";
       optionSelected.value = "";
+      dateInput.value = "";
+      fileInput.value = "";
+      
 
       
       //lets add a event listener which is with event click for Edit
@@ -151,14 +182,20 @@ window.addEventListener('load', ()=>{
             task_input_el.removeAttribute("readonly");
             task_textarea_el.removeAttribute("readonly");
             task_status_el.removeAttribute("readonly");
-            task_edit_el.innerText= "Save";
+            task_dueDate_el.removeAttribute("readonly");
+            task_edit_el.innerText = "Save";
             task_input_el.focus();
             task_textarea_el.focus();
+            task_status_el.focus();
+            task_dueDate_el.focus();
+
 
          }else {
             task_input_el.setAttribute("readonly","readonly");
             task_textarea_el.setAttribute("readonly","readonly");
             task_status_el.setAttribute("readonly","readonly");
+            task_dueDate_el.setAttribute("readonly","readonly");
+
             task_edit_el.innerText = "Edit";
          }
 
