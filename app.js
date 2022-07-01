@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const homeRouter = require('./routers/homeRouter')
 
 
-const port = process.env.port || 8080;
+const PORT = process.env.port || 8080;
 
 
 const app = express();
@@ -68,4 +68,6 @@ app.use(bodyParser.json())
 //router running on index
 app.use('/',homeRouter)
 
-app.listen(8080)
+//app.listen(8080)
+app.listen(PORT, () =>
+console.log("on http://localhost:") + PORT);
