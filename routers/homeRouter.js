@@ -7,7 +7,7 @@ Router.use(express.urlencoded({ extended: false}))
 
 
 Router.get('/',(req,res) =>{
-    res.render('index.ejs')
+    res.render('index')
 })
 
 
