@@ -9,11 +9,13 @@ const bodyParser = require('body-parser');
 const homeRouter = require('./routers/homeRouter')
 
 
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 
 
 const app = express();
+
+app.set("port", PORT);
 
 //db connection
 //mongoose.connect('mongodb+srv://Hamza:Sisijoy123@cluster0.eabv6fz.mongodb.net/test',{useNewUrlParser:true},{useUnifiedTopology:true})
