@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const homeRouter = require('./routers/homeRouter')
 
 
-const PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8080;
 
 
 
