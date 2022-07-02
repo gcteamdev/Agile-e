@@ -20,7 +20,7 @@ Router.get("/register",(err,res) =>{
 
 Router.post("/register",async(req,res) =>{
   try{
-    const {
+    var {
         name,
         email,
         password,
@@ -28,7 +28,7 @@ Router.post("/register",async(req,res) =>{
     } = req.body;
     
     if(password === cpassword){
-        const userData = new homeSchema ({
+        var userData = new homeSchema ({
             name,
             email,
             password
@@ -44,7 +44,7 @@ Router.post("/register",async(req,res) =>{
         })
 
         //this code below above else is to prevent email from multi uses, if to be submit email = exited email => show error
-        const useremail = await homeSchema.findOne({ email:email});
+        var useremail = await homeSchema.findOne({ email:email});
           if (email === useremail.email) {
             res.render('register',{title:'', password:'',email:'This e-mail is already taken!'})
           
@@ -75,12 +75,12 @@ Router.post("/register",async(req,res) =>{
 
 //same above get and post route for login.ejs
     Router.get('/login',(err,res) =>{
-    res.render('login.ejs',{title:'Sign In to explore the power!', password:'',email:''})
+    res.render('login',{title:'Sign In to explore the power!', password:'',email:''})
 })
 
 Router.post('/login',async(req,res) =>{
   
-    const {
+    var {
         email,
         password
     } = req.body;
