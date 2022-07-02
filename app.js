@@ -9,18 +9,20 @@ const bodyParser = require('body-parser');
 const homeRouter = require('./routers/homeRouter')
 
 
-const PORT = process.env.PORT || 5000;
+//const PORT = process.env.PORT || 5000;
+const PORT = parseInt(process.env.PORT) || 3000;
+console.log(PORT);
 
 
 
 const app = express();
 
-app.set("port", PORT);
-
 //db connection
-//mongoose.connect('mongodb+srv://Hamza:Sisijoy123@cluster0.eabv6fz.mongodb.net/test',{useNewUrlParser:true},{useUnifiedTopology:true})
+mongoose.connect('mongodb+srv://Hamza:Sisijoy123@cluster0.eabv6fz.mongodb.net/test',{useUnifiedTopology:true})
 
-mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true},{useUnifiedTopology:true})
+
+
+//mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true},{useUnifiedTopology:true})
 
 const db = mongoose.connection;
 
@@ -80,7 +82,14 @@ app.use(bodyParser.json())
 //router running on index
 app.use('/', homeRouter)
 
-app.listen(PORT || 5000)
+app.listen(PORT)
 
 //app.listen(PORT, () =>
 //console.log("listening on http://localhost:8080 ...") + PORT);
+
+
+
+
+
+//for env file
+//DATABASE_URL=mongodb://localhost/agile-e
