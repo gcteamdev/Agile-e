@@ -3,10 +3,10 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 
-const express = require('express');
-const mongoose =require('mongoose');
-const bodyParser = require('body-parser');
-const homeRouter = require('./routers/homeRouter')
+var express = require('express');
+var mongoose =require('mongoose');
+var bodyParser = require('body-parser');
+var homeRouter = require('./routers/homeRouter')
 
 
 //const PORT = process.env.PORT || 5000;
@@ -15,7 +15,7 @@ console.log(PORT);
 
 
 
-const app = express();
+var app = express();
 
 //db connection
 mongoose.connect('mongodb+srv://Hamza:Sisijoy123@cluster0.eabv6fz.mongodb.net/test',{useUnifiedTopology:true})
@@ -24,7 +24,7 @@ mongoose.connect('mongodb+srv://Hamza:Sisijoy123@cluster0.eabv6fz.mongodb.net/te
 
 //mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true},{useUnifiedTopology:true})
 
-const db = mongoose.connection;
+var db = mongoose.connection;
 
 db.on('error',() =>{
      console.log("error connecting database")
