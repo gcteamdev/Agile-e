@@ -13,7 +13,7 @@ Router.get("/",(req,res) =>{
 
 //you are defining titile and email and password messages here
 Router.get("/register",(err,res) =>{
-    res.render("register",{title:'Sign up to explore!', password:'',email:''})
+    res.render("register.ejs",{title:'Sign up to explore!', password:'',email:''})
 })
 
 
@@ -75,7 +75,7 @@ Router.post("/register",async(req,res) =>{
 
 //same above get and post route for login.ejs
     Router.get('/login',(err,res) =>{
-    res.render('login',{title:'Sign In to explore the power!', password:'',email:''})
+    res.render('login.ejs',{title:'Sign In to explore the power!', password:'',email:''})
 })
 
 Router.post('/login',async(req,res) =>{
