@@ -18,12 +18,12 @@ console.log(PORT);
 var app = express();
 
 //db connection
-//mongoose.connect('mongodb+srv://Hamza:Sisijoy123@cluster0.eabv6fz.mongodb.net/test',{useUnifiedTopology:true})
+mongoose.connect('mongodb+srv://Hamza:Sisijoy123@cluster0.eabv6fz.mongodb.net/test',{useUnifiedTopology:true})
 
 
 
-mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true},{useUnifiedTopology:true})
-
+//mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true},{useUnifiedTopology:true})
+// this line goes to env: DATABASE_URL=mongodb://localhost/agile-e
 var db = mongoose.connection;
 
 db.on('error',() =>{
