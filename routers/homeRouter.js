@@ -6,19 +6,19 @@ const homeSchema = require('../models/homeSchema')
 Router.use(express.urlencoded({ extended: false}))
 
 
-Router.get('/',(req,res) =>{
-    res.render('index')
+Router.get("/",(req,res) =>{
+    res.render("index")
 })
 
 
 //you are defining titile and email and password messages here
-Router.get('/register',(err,res) =>{
-    res.render('register',{title:'Sign up to explore!', password:'',email:''})
+Router.get("/",(err,res) =>{
+    res.render("register",{title:'Sign up to explore!', password:'',email:''})
 })
 
 
 
-Router.post('/register',async(req,res) =>{
+Router.post("/register",async(req,res) =>{
   try{
     const {
         name,
@@ -51,7 +51,7 @@ Router.post('/register',async(req,res) =>{
           }
 
     } else{
-        res.render('register',{title:'Passwords does not match!', password:'',email:''})
+        res.render("register",{title:'Passwords does not match!', password:'',email:''})
 
     }
     
@@ -74,7 +74,7 @@ Router.post('/register',async(req,res) =>{
 
 
 //same above get and post route for login.ejs
-Router.get('/login',(err,res) =>{
+Router.get('/',(err,res) =>{
     res.render('login',{title:'Sign In to explore the power!', password:'',email:''})
 })
 

@@ -45,20 +45,6 @@ app.set('views', __dirname + '/views')
 
 
 
-//get route for index.ejs
-
-
-
-/* below code was moved to homerouter.js
-
-//get route for login.ejs and register.ejs
-app.get('/login',(req,res) =>{
-    res.render('login.ejs',{user:'Sign in to explore!', password:'',email:''})
-})
-app.get('/register',(req,res) =>{
-    res.render('register.ejs',{user:'Sign up to explore!', password:'',email:''})
-})
-*/
 
 
 
@@ -82,12 +68,12 @@ app.use(bodyParser.json())
 //router running on index
 app.use('/', homeRouter)
 
-app.listen(PORT)
+
 
 //app.listen(PORT, () =>
 //console.log("listening on http://localhost:8080 ...") + PORT);
 
-
+app.listen(PORT)
 
 
 
