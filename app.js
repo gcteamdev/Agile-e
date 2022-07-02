@@ -10,7 +10,7 @@ var homeRouter = require('./routers/homeRouter')
 
 
 //const PORT = process.env.PORT || 5000;
-const PORT = parseInt(process.env.PORT) || 3000;
+var PORT = parseInt(process.env.PORT) || 3000;
 console.log(PORT);
 
 
@@ -74,6 +74,7 @@ app.use('/', homeRouter)
 //console.log("listening on http://localhost:8080 ...") + PORT);
 
 app.listen(PORT)
+
 
 
 
