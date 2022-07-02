@@ -5,6 +5,7 @@ window.addEventListener('load', ()=>{
     const enteredStatus = document.querySelector("#status");
     const optionSelected = document.querySelector("#new-option");
     const dateInput = document.querySelector("#task-due");
+   // const levelreader = document.querySelector("#attachlevel");
     const fileInput = document.querySelector("#file");
     const list_el = document.querySelector("#tasks");
 
@@ -19,7 +20,7 @@ window.addEventListener('load', ()=>{
         const submittedStatus = enteredStatus.value;
         const submittedOption = optionSelected.value;
         const submittedDate = dateInput.value;
-        const submittedFile = fileInput.value;
+       
        
      
      
@@ -50,14 +51,7 @@ window.addEventListener('load', ()=>{
 
       task_el.appendChild(task_content_el);
 
-      //inside the content div we want to paste whatever the value of entered input (line 24) in the form 
-
-     // task_content_el = task;
-
-
-     // now lets put the outer dive inside the div of Headline 'TASK' in html
-     // take this at bottom as it make more sens at the end 
-      //list_el.appendChild(task_el)
+      
 
 
 
@@ -95,7 +89,6 @@ window.addEventListener('load', ()=>{
       statusOption.type = "text";
       statusOption.value = submittedOption;
       statusOption.setAttribute("readonly","readonly");
-    
       task_status_el.appendChild(statusOption);
 
 
@@ -107,24 +100,34 @@ window.addEventListener('load', ()=>{
       task_dueDate_el.value = submittedDate;
       task_dueDate_el.setAttribute("readonly","readonly");
     
+      //for level 
+       const task_attachlevel_el = document.createTextNode("Attach Mocups or files");
+      //task_attachlevel_el.classList.add("attachlevel");
+     // task_attachlevel_el.type = "text";
+      //task_attachlevel_el.value = "Attach Mockups or desgins attachements";
+      //task_attachlevel_el.setAttribute("value","Attach Mockups or desgins attachements");
+
+
     
       //attach file
 
       const task_attachment_el = document.createElement("input");
       task_attachment_el.classList.add("fileEntered");
       task_attachment_el.type = "file";
-      task_attachment_el.innercontent = submittedFile;
+      //task_attachment_el.innercontent = submittedFile;
       task_attachment_el.setAttribute("readonly","readonly");
      
       
       
-
+      //all the  direct childs of task_content get appended
       
       task_content_el.appendChild(task_input_el);
       task_content_el.appendChild(task_textarea_el);
       task_content_el.appendChild(task_status_el);
       task_content_el.appendChild(task_dueDate_el);
       task_content_el.appendChild(task_attachment_el);
+      task_content_el.appendChild(task_attachlevel_el);
+
 
       
 
@@ -169,7 +172,7 @@ window.addEventListener('load', ()=>{
       enteredStatus.value = "";
       optionSelected.value = "";
       dateInput.value = "";
-      fileInput.value = "";
+    
       
 
       
