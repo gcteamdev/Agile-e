@@ -1,9 +1,9 @@
-/*
+
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
-//for env connected way
-*/
+
+
 
 
 
