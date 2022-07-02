@@ -46,8 +46,8 @@
           <h1 class="display-4 text-bold text-muted headline">Agile-ḝ!</h1>
           <p class="lead text-white">Created to simplify projects and mark the success ahead! </p>
 
-          <button onclick="window.location.href='#project-one'" class="btn bg-primary text-white text-bold border-white mt-5 mr-3 p-2 project-btn">Create New Project</button>
-          <button class="btn bg-info text-white text-bold border-white mt-5 p-2 project-btn"> View Projects</button>
+          <a  href='#add-project' class="btn bg-primary text-white text-bold border-white mt-5 mr-3 p-2 project-btn">Create New Project</a>
+          <a href="#view-projects" class="btn bg-info text-white text-bold border-white mt-5 p-2 project-btn"> View Projects</a>
           </div>
 
       </div>
@@ -87,10 +87,10 @@
 
 
 <header class="container bg-light col-md-6" id="#project-one">
-  <h1 class="col text-center text-bold text-info rounded">Add project</h1>
+  <h1 class="col text-center text-bold text-info rounded" id="add-project">Add project</h1>
   <form id="new-task-form">
       <input type="text" class="col rounded mb-3 text-info border-info" id="new-task-input" placeholder="Enter project name"/><br>
-      <textarea type="text" class="col rounded mb-3 input-textarea textwhite bg-light border-info" id="new-task-textarea" placeholder="Enter description....Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea><br>
+      <textarea type="text" class="col rounded mb-3 input-textarea textwhite bg-light border-info" id="new-task-textarea" placeholder="Enter description.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></textarea><br>
 
 
 
@@ -118,7 +118,7 @@
  <main>
      
      <section class="task-list">
-       <h2 class="col text-center text-bold text-white ">Current Projects:</h2>
+       <h2 class="col text-center text-bold text-white " id="view-projects">Current Projects:</h2>
         <div id="tasks" class="text-info bg-muted container rounded">
              
       <!-- <div class="task">
