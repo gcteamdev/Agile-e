@@ -76,19 +76,19 @@ window.addEventListener('load', ()=>{
 
       //status of project
 
-      const task_status_el = document.createElement("select");
+      const task_status_el = document.createElement("div");
       task_status_el.classList.add('status');
       task_status_el.type = "text";
-      task_status_el.value = submittedStatus;
+      task_status_el.innerHTML = submittedStatus;
       //meaning value will be whatever user entered as input see 'select status' 
       task_status_el.setAttribute("readonly","readonly");
 
 
-      const statusOption = document.createElement("option");
+      const statusOption = document.createTextNode("");
       //statusOption.value = enteredStatus.value.toLocaleLowerCase();
-      statusOption.type = "text";
-      statusOption.value = submittedOption;
-      statusOption.setAttribute("readonly","readonly");
+      //statusOption.type = "text";
+     // statusOption.value = submittedOption;
+     // statusOption.setAttribute("readonly","readonly");
       task_status_el.appendChild(statusOption);
 
 
