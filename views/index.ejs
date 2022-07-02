@@ -40,10 +40,27 @@
 
       <div class=" jumbotron jumbotron-fluid banner d-flex border border-light rounded ml-2 mr-2 mb-5">
          <div class="container">
-          <h1 class="display-4  col-md-6 text-bold text-muted headline">Agile-ḝ!</h1>
-          <p class="lead text-white">Created to simplify projects and mark the success ahead! </p>
-          <a href="register" class="btn btn-primary btn-lg active border-white  banner-btn" role="button" aria-pressed="true">Sign Up</a>
-          <a href="login" class="btn btn-secondary btn-lg active border-info  ml-5 banner-btn" role="button" aria-pressed="true">Log In</a>
+          <h1 class="display-4  col-md-6 text-bold text-muted headline mt-4 mb-5">Agile-ḝ!</h1>
+          <h3 class="text-white">A <strong class="alert-success success">secured</strong> project planner!</h3>
+
+          <h4  class="text-muted mt-3" >Created to simplify projects, as we strive to create something
+             <strong class="rw-words rw-words-1 first-portion-text-2nd ">
+            
+                  
+                 <span> awesome!</span>
+                 <span> fabulous!</span>
+                 <span> interesting!</span>
+                 <span> inspiring!</span>
+                 <span> cool!</span>
+                 <span> creative!</span>
+
+            </strong>  
+          </h4>
+
+
+
+          <a href="register" class="btn btn-primary btn-lg active border-white  banner-btn mb-5" role="button" aria-pressed="true">Sign Up</a>
+          <a href="login" class="btn btn-secondary btn-lg active border-info  ml-5 banner-btn mb-5" role="button" aria-pressed="true">Log In</a>
         </div>
 
       </div>
@@ -77,11 +94,15 @@
        .banner-btn{
         margin-top:150px;
        }
+       .success{
+        background: none!important;
+       }
       </style>
 
 
 
-<form class=" col col-lg-6 contact-us bg-light bordered text-center">
+
+  <form class=" col col-lg-6 contact-us bg-light bordered text-center" id="contact-us" action="https://submit-form.com/W4ZjptcE" method="POST">
     <h3> Send a Pigeon</h3>
     <div class="form-group">
       <label for="exampleFormControlInput1">Email address</label>
@@ -98,7 +119,8 @@
       <label for="exampleFormControlTextarea1">Message</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
-    <a href="register" class="btn btn-info btn-lg active mb-5" role="button" aria-pressed="true">Send</a>
+    
+    <button type="submit" class="btn btn-info btn-lg active mb-5">Send</button>
   </form>
 
 
@@ -114,27 +136,123 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
+
+
+<!--this style below is for rotating text in banner-->
+
+<style>
+
+   
+.rw-words{
+    display: inline;
+    text-indent: 2px;
+}
+.rw-words-1 span{
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    color: #f1c40f;
+    -webkit-animation: rotateWord 18s linear infinite 0s;
+    -ms-animation: rotateWord 18s linear infinite 0s;
+    animation: rotateWord 18s linear infinite 0s;
+}
+.rw-words-1 span:nth-child(2) { 
+    -webkit-animation-delay: 3s; 
+    -ms-animation-delay: 3s; 
+    animation-delay: 3s; 
+    color:maroon;
+}
+.rw-words-1 span:nth-child(3) { 
+    -webkit-animation-delay: 6s; 
+    -ms-animation-delay: 6s; 
+    animation-delay: 6s; 
+    color: #3498db; 
+}
+.rw-words-1 span:nth-child(4) { 
+    -webkit-animation-delay: 9s; 
+    -ms-animation-delay: 9s; 
+    animation-delay: 9s; 
+    color: seagreen;
+}
+.rw-words-1 span:nth-child(5) { 
+    -webkit-animation-delay: 12s; 
+    -ms-animation-delay: 12s; 
+    animation-delay: 12s; 
+    color: #4819b6;
+}
+.rw-words-1 span:nth-child(6) { 
+    -webkit-animation-delay: 15s; 
+    -ms-animation-delay: 15s; 
+    animation-delay: 15s; 
+    color: #6b969d;
+}
+@-webkit-keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); }
+    5% { opacity: 1; -webkit-transform: translateY(0px);}
+    17% { opacity: 1; -webkit-transform: translateY(0px); }
+    20% { opacity: 0; -webkit-transform: translateY(30px); }
+    80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-ms-keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -ms-transform: translateY(-30px); }
+    5% { opacity: 1; -ms-transform: translateY(0px);}
+    17% { opacity: 1; -ms-transform: translateY(0px); }
+    20% { opacity: 0; -ms-transform: translateY(30px); }
+    80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+    5% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
+    17% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
+    20% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+    80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
     <div class="footer bg-dark ">
         <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link active mt-5 text-info" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active text-info" href="/">About</a>
-              </li>
+              <a class="nav-link text-info" href="#contact-us">Contact us</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link text-info" href="https://github.com/gcteamdev">Github</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-info" href="https://www.linkedin.com/in/devhamza/">Linkedin</a>
               </li>
-            <li class="nav-item">
-              <a class="nav-link mb-5 text-info" href="/">Contact us</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link active text-info" href="/">About</a>
+              </li>
+            
         </ul>
         <div class="footer-copyright text-center py-3 text-white">© 2022 Copyright
             <a href="#"> </a>
-          </div>
+         </div>
     </div>
     
   </body>
