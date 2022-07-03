@@ -2,10 +2,7 @@ window.addEventListener('load', ()=>{
     const form = document.querySelector("#new-task-form");
     const input = document.querySelector("#new-task-input");
     const enteredTextarea = document.querySelector("#new-task-textarea");
-    const enteredStatus = document.querySelector("#status");
-    const optionSelected = document.querySelector("#new-option");
     const dateInput = document.querySelector("#task-due");
-   // const levelreader = document.querySelector("#attachlevel");
     const fileInput = document.querySelector("#file");
     const list_el = document.querySelector("#tasks");
 
@@ -17,8 +14,6 @@ window.addEventListener('load', ()=>{
         //also put a if condition to enter text to submit give a alert message else console "success"
         const task = input.value;
         const submittedTextArea = enteredTextarea.value;
-        const submittedStatus = enteredStatus.value;
-        const submittedOption = optionSelected.value;
         const submittedDate = dateInput.value;
        
        
@@ -74,22 +69,22 @@ window.addEventListener('load', ()=>{
 
 
 
-      //status of project
+      //status of project <select an option
 
-      const task_status_el = document.createElement("div");
-      task_status_el.classList.add('status');
-      task_status_el.type = "text";
-      task_status_el.innerHTML = submittedStatus;
-      //meaning value will be whatever user entered as input see 'select status' 
-      task_status_el.setAttribute("readonly","readonly");
+      const task_status_el = document.createElement('select');
+      task_status_el.name = 'drop1';
+      task_status_el.id = "Select1";
+
+      const status = ["In-Progress","Project-Completed","Postpone",];
 
 
-      const statusOption = document.createTextNode("");
-      //statusOption.value = enteredStatus.value.toLocaleLowerCase();
-      //statusOption.type = "text";
-     // statusOption.value = submittedOption;
-     // statusOption.setAttribute("readonly","readonly");
-      task_status_el.appendChild(statusOption);
+      const options = status.map(pickStatus => {
+         const value = pickStatus.toLowerCase();
+         return `<option value = "${value}"> ${pickStatus}</option>`;
+      });
+      task_status_el.innerHTML = options;
+
+
 
 
 
@@ -102,11 +97,7 @@ window.addEventListener('load', ()=>{
     
       //for level 
        const task_attachlevel_el = document.createTextNode("Attach Mocups or files");
-      //task_attachlevel_el.classList.add("attachlevel");
-     // task_attachlevel_el.type = "text";
-      //task_attachlevel_el.value = "Attach Mockups or desgins attachements";
-      //task_attachlevel_el.setAttribute("value","Attach Mockups or desgins attachements");
-
+   
 
     
       //attach file
@@ -114,7 +105,6 @@ window.addEventListener('load', ()=>{
       const task_attachment_el = document.createElement("input");
       task_attachment_el.classList.add("fileEntered");
       task_attachment_el.type = "file";
-      //task_attachment_el.innercontent = submittedFile;
       task_attachment_el.setAttribute("readonly","readonly");
      
       
@@ -169,8 +159,6 @@ window.addEventListener('load', ()=>{
       //if you keep the value to empty string once you add one task, the main task card defult to clean.
       input.value = "";
       enteredTextarea.value = "";
-      enteredStatus.value = "";
-      optionSelected.value = "";
       dateInput.value = "";
     
       
